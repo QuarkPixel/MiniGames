@@ -1,0 +1,155 @@
+body {
+    height: 100vh;
+    background-color: #000;
+}
+
+canvas {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    pointer-events: none;
+}
+
+.ui {
+    position: absolute;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // align-content: center;
+    // flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .title {
+        width: auto;
+        margin: 5vmin 5vw;
+        padding-top: 2vmin;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        outline: #fff9 1px solid;
+        backdrop-filter: blur(10px);
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 3vmin;
+            top: 3vmin;
+            display: block;
+            background: #fff9;
+            width: 1vmin;
+            height: 1vmin;
+
+            font-size: 8vmin;
+
+            box-shadow: 86vw 0 #fff9;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 3vmin;
+            bottom: 3vmin;
+            display: block;
+            background: #fff9;
+            width: 1vmin;
+            height: 1vmin;
+
+            font-size: 8vmin;
+
+            box-shadow: 86vw 0 #fff9;
+        }
+
+        h1 {
+            font-size: 14vmin;
+        }
+
+        h2 {
+            font-size: 10vmin;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 90vw;
+        margin-left: 5vw;
+
+        li {
+            position: relative;
+            padding-top: 6pt;
+            // margin: 8vmin 1vmin;
+            display: inline-block;
+            // width: 45vmin;
+            margin: 2vmin;
+
+            transition: transform .5s var(--curve);
+
+            a {
+                position: relative;
+                margin-left: 5pt;
+                z-index: 1;
+                display: inline;
+
+                font-size: 8vmin;
+
+                &::before {
+                    content: "·";
+                    opacity: .7;
+
+                    transition: opacity .5s var(--curve);
+                }
+
+                &::after {
+                    content: "·";
+                    opacity: .7;
+
+                    transition: opacity .5s var(--curve);
+                }
+            }
+
+            &:hover {
+                transform: scale(1.1);
+
+                >a::after {
+                    opacity: 1;
+                }
+
+                >a::before {
+                    opacity: 1;
+                }
+
+                &::after {
+                    outline: #fff4 1vmin solid;
+                }
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+
+                background: #0007;
+                backdrop-filter: blur(10px);
+                // border: #fff 1px solid;
+                outline: #fff9 1px solid;
+
+                transition: outline .3s var(--curve);
+
+                // &:hover {
+                //     width: 100%;
+                // }
+                // &
+            }
+
+        }
+    }
+}
